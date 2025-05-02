@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#topBar {
+    background-color: #dd632a;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    flex: 0 0 50px;
+}
+
+#container {
+    display: flex;
+    flex: 1;
+}
+
+#menuBar {
+    background-color: #ffa047;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+#mainPanel {
+    
+    text-align: left;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
