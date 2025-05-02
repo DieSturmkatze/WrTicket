@@ -7,11 +7,11 @@ body {
 }
 
 #topBar {
-    background-color: #dd632a;
+    background-color: #f39a46;
     color: white;
-    padding: 10px;
-    text-align: center;
-    flex: 0 0 50px;
+    text-align: left; /* Changed from center to left */
+    height: 100px;
+   
 }
 
 #container {
@@ -20,7 +20,7 @@ body {
 }
 
 #menuBar {
-    background-color: #ffa047;
+    background-color: #f88323;
     color: white;
     width: 200px;
     padding: 10px;
@@ -32,4 +32,26 @@ body {
     text-align: left;
     padding: 20px;
     background-color: #f4f4f4;
+}
+
+#menuEntry{
+    font-size: 19px;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+    
+}
+
+#logo {
+    height: 100px;
+    padding-left: 20px;
+    margin: 5px;
+}
+
+#title{
+    position: absolute;
+    font-size: 30px;
+    top: 0px;
+    left: 100px;
+
 }
