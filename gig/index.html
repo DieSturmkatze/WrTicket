@@ -5,22 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gig</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="topBar">
         <img src="logo.svg" alt="Logo" id="logo" >
         <div id="title">your fair ticketing service</div>
 
+        
+            <div id="panel">Events</div>
+        
+        <!-- 
+        <div id="eventMapPanel"></div>
+            <div class="heading1">Event Map</div>
+        </div>
+        <div id="loginPanel">
+            <div class="heading1">Login</div>
+        </div>
+        <div id="aboutPanel">
+            <div class="heading1">About</div>
+        </div>
+        -->
     </div>
     <div id="container">
         <div id="menuBar">
-            <div id="menuEntry">Events</div>
-            <div id="menuEntry">Event Map</div>
-            <div id="menuEntry">Login</div>
-            <div id="menuEntry">About</div>
+            <div onclick="switchPanel('Events')" id="menuEntry">Events</div>
+            <div onclick="switchPanel('Map')" id="menuEntry">Event Map</div>
+            <div onclick="switchPanel('Login')" id="menuEntry">Login</div>
+            <div onclick="switchPanel('About')" id="menuEntry">About</div>
+        </div>
+
+        <div id="content">
+            <div class="panel1" id="Events">[Events]</div>
+            <div class="panel1" id="Map">[Event Map]</div>
+            <div class="panel1" id="Login">[Login]</div>
+            <div class="panel1" id="About">[About]</div>
             
         </div>
-        <div id="mainPanel">Main Panel</div>
+            
+                
     </div>
 </body>
 </html>
