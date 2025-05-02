@@ -20,7 +20,7 @@ body {
 }
 
 #menuBar {
-    background-color: #fa9745;
+    background-color: #fa8e36;
     color: white;
     width: 140px;
     padding: 10px;
@@ -28,18 +28,44 @@ body {
     text-align: center;
 }
 
-#menuEntry{
+#menuEntryTop {
     font-size: 19px;
     padding: 15px;
     cursor: pointer;
     border-bottom: 2px solid #ffffff;
-    
+    border-top: 2px solid #ffffff;
+    transition: border 0.1s ease;
+}
+
+#menuEntry {
+    font-size: 19px;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+    transition: border 0.1s ease;
+}
+
+#menuEntry:hover, #menuEntryTop:hover {
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+
+#menuEntry:active, #menuEntryTop:active {
+    transform: scale(0.95);
+    transition: transform 0.07s ease;
 }
 
 #logo {
     height: 100px;
     padding-left: 20px;
     margin: 5px;
+    transition: 0.1s ease;
+}
+
+#logo:hover {
+    scale: 0.95;
+    transition: 0.1s ease;
 }
 
 #title{
@@ -64,4 +90,122 @@ body {
 
 .hidden {
     display: none;
+}
+
+#searchArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding : 15px;
+    border: 4px solid #ec9257;
+    border-radius: 14px;
+    background-color: #ec9257;
+}
+
+#search{
+    display: inline-block;
+    width: 300px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: #ec9257;
+    color: white;
+}
+
+#search::placeholder{
+    color: white;
+    font-size: 16px;
+}
+
+#filterIcon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+
+    
+}
+
+#filterIcon:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: 0.1s ease;
+}
+
+#sortIcon {
+    width: 33px;
+    height: 33px;
+    margin-left: 10px;
+    
+}
+
+#sortIcon:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: 0.1s ease;
+}
+
+#eventList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px;
+
+}
+
+.eventEntry {
+    display: grid;
+    width: 300px;
+    height: 170px;
+    margin: 10px;
+    border: 5px solid #ec9257;
+    background-color: #ec9257;
+    color: white;
+    border-radius: 7px;
+    padding: 8px;
+}
+
+.eventTitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.eventPrice {
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px;
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: white;
+    color: #ec9257;
+    padding: 5px;
+    padding-left: 14px;
+    width: 60px;
+    left: 213px;
+}
+
+.eventDate {
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 5px;
+    left: 40px;
+}
+
+.eventLocation {
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 5px;
+    left: 40px;
+}
+
+.timeIcon {
+    width: 30px;
+    height: 30px;
+    position: absolute; /* Changed from relative to absolute */
+    top: 25px;
 }
