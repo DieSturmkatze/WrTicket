@@ -22,7 +22,7 @@ body {
 #menuBar {
     background-color: #f88323;
     color: white;
-    width: 200px;
+    width: 170px;
     padding: 10px;
     flex-shrink: 0;
 }
@@ -51,8 +51,8 @@ body {
 #title{
     position: absolute;
     font-size: 18px;
-    top: 33px;
-    left: 110px;
+    top: 35px;
+    left: 105px;
     padding: 5px;
 
 }
