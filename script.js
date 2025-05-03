@@ -2,13 +2,14 @@ const apiUrl = ""
 const eventEntryTemplate = document.querySelector("#eventEntryTemplate")
 
 
-function switchPanel(panel){
-    document.getElementById("panel").innerHTML = panel;
 
-    document.querySelectorAll(".panel1").forEach(function(p){
-        p.classList.add("hidden");
-    });
-    document.getElementById(panel).classList.remove("hidden");
+function switchPanel(panel) {
+	document.getElementById("panel").innerHTML = panel;
+
+	document.querySelectorAll(".panel1").forEach(function (p) {
+		p.classList.add("hidden");
+	});
+	document.getElementById(panel).classList.remove("hidden");
 }
 
 async function getEvents() {
@@ -70,14 +71,13 @@ function insertEvent(event) {
 function debug() {
 	insertEvent(
 		{
-			title:"Babymetal",
-			date:"e8321",
-			location:{
-				name:"Olypmiastadion München",
-				address:"Idk",
+			title: "Babymetal",
+			date: "e8321",
+			location: {
+				name: "Olypmiastadion München",
+				address: "Idk",
 			},
-			price:"69€"
+			price: "69€"
 		}
 	)
 }
-

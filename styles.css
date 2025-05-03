@@ -244,3 +244,8 @@ body {
     position: relative; /* Changed from relative to absolute */
     top: -116px;
 }
+
+#eventMap {
+	height: 800px;
+	width: 800px;
+}
