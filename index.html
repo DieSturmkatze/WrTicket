@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gig</title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+	integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+	crossorigin=""></script>
+	
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="mapThings.js" defer></script>
 </head>
 <body>
     <div id="topBar">
@@ -15,8 +24,8 @@
     </div>
     <div id="container">
         <div id="menuBar">
-            <div onclick="switchPanel('Events')" id="menuEntryTop">Events</div>
-            <div onclick="switchPanel('Map')" id="menuEntry">Event Map</div>
+            <div onclick="switchPanel('Events'); getEvents();" id="menuEntryTop">Events</div>
+            <div onclick="switchPanel('Map'); updateMap();" id="menuEntry">Event Map</div>
             <div onclick="switchPanel('Login')" id="menuEntry">Login</div>
             <div onclick="switchPanel('About')" id="menuEntry">About</div>
         </div>
@@ -56,18 +65,24 @@
                     </div>
                 </div>
             </div>
-            <div class="panel1 hidden" id="Map">[Event Map]</div>
+            <div class="panel1 hidden" id="Map">
+				[Event Map]
+				<div id="eventMap"></div>
+			</div>
             <div class="panel1 hidden" id="Login">[Login]</div>
             <div class="panel1 hidden" id="About">[About]</div>
-            
+            <div class="panel1 hidden" id="EventInfo">
+				<button onclick="switchPanel('Events')">Back</button>
+				<div id="eventInfoContainer">
+
+				</div>
+			</div>
         </div>
-            
-                
     </div>
 </body>
 
 <template id="eventEntryTemplate">
-	<div class="eventEntry">
+	<div class="eventEntry" onclick="openEventPage(this, 'eventView')">
 		<div class="eventTitle">NanowaR of Steel</div>
 		<div class="eventDate">23.7.25</div>
 		<div class="eventLocation">Backstage München</div>
@@ -75,6 +90,14 @@
 		<div class="eventPrice">69$</div>
 		<img class="timeIcon" src="timeIcon.png">
 		<img class="venueIcon" src="venueIcon.png">
+	</div>
+</template>
+<template id="mapPopupTemplate">
+	<div id="mapPopup">
+		<div id="popupTitle">NanowaR</div>
+		<div id="popupLocation">Back Stage Werk</div>
+		<div id="popupDate">32.1.26</div>
+		<button onclick='switchPanel("Events")''>Find Events</button>
 	</div>
 </template>
 </html>
