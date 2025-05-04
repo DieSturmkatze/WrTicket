@@ -42,12 +42,33 @@ async function getPosition() {
 	}
 }
 
-function addMapMarkers() {
-	var marker = L.marker([48.14, 11.52]).addTo(eventMap)
+async function addMapMarkers() {
+	data = await getEventsMap();
+	for (const event of data.results) {
+		var toInsert = mapPopupTemplate.content.cloneNode(true);
+		toInsert.getElementById("popupTitle").value = event.title
+		toInsert.getElementById("popupLocation").value = event.location.name
+		console.log(toInsert.getElementById("mapPopup"))
+		L.marker([event.location.lat, event.location.long])
+			.addTo(eventMap)
+			.bindPopup(toInsert.getElementById("mapPopup").innerHTML); //scuffed but works
+	}
+}
 
-	marker.bindPopup(mapPopupTemplate.innerHTML).openPopup();
+async function getEventsMap() {
+	try {
+		const data = await getEventsData()
+		if (!data) return
+		console.log(data)
+		if (data.results.length <= 0) return
+
+		return data
+	} catch (error) {
+		console.error('Search failed:', error)
+	}
 }
 
 function updateMap() {
-	eventMap.invalidateSize()
+	eventMap.invalidateSize();
+	addMapMarkers();
 }

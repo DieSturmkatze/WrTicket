@@ -24,7 +24,7 @@
     </div>
     <div id="container">
         <div id="menuBar">
-            <div onclick="switchPanel('Events')" id="menuEntryTop">Events</div>
+            <div onclick="switchPanel('Events'); getEvents();" id="menuEntryTop">Events</div>
             <div onclick="switchPanel('Map'); updateMap();" id="menuEntry">Event Map</div>
             <div onclick="switchPanel('Login')" id="menuEntry">Login</div>
             <div onclick="switchPanel('About')" id="menuEntry">About</div>
@@ -71,15 +71,18 @@
 			</div>
             <div class="panel1 hidden" id="Login">[Login]</div>
             <div class="panel1 hidden" id="About">[About]</div>
-            
+            <div class="panel1 hidden" id="EventInfo">
+				<button onclick="switchPanel('Events')">Back</button>
+				<div id="eventInfoContainer">
+
+				</div>
+			</div>
         </div>
-            
-                
     </div>
 </body>
 
 <template id="eventEntryTemplate">
-	<div class="eventEntry">
+	<div class="eventEntry" onclick="openEventPage(this, 'eventView')">
 		<div class="eventTitle">NanowaR of Steel</div>
 		<div class="eventDate">23.7.25</div>
 		<div class="eventLocation">Backstage München</div>
@@ -90,7 +93,11 @@
 	</div>
 </template>
 <template id="mapPopupTemplate">
-	<div class="eventLocation">Back Stage Werk</div>
-	<button onclick='switchPanel("Events")''>Find Events</button>
+	<div id="mapPopup">
+		<div id="popupTitle">NanowaR</div>
+		<div id="popupLocation">Back Stage Werk</div>
+		<div id="popupDate">32.1.26</div>
+		<button onclick='switchPanel("Events")''>Find Events</button>
+	</div>
 </template>
 </html>
