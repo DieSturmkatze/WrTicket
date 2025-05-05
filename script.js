@@ -5,16 +5,20 @@ debug = true
 
 
 
-function switchPanel(me, panel) {
-	//document.getElementById("panel").innerHTML = panel;
-	document.querySelectorAll(".menuEntry").forEach(function (e) {
-		e.classList.remove("menuEntryActive");
-	});
-	me.classList.add("menuEntryActive");
+function switchPanel(panel) {
+	
 	document.querySelectorAll(".panel1").forEach(function (p) {
 		p.classList.add("hidden");
 	});
 	document.getElementById(panel).classList.remove("hidden");
+}
+
+function switchPanelFromMenu(obj, panel) {
+	document.querySelectorAll(".menuEntry").forEach(function (p) {
+		p.classList.remove("menuEntryActive");
+	});
+	obj.classList.add("menuEntryActive");
+	switchPanel(panel);
 }
 
 function openEventPage(eventthis, from) {
