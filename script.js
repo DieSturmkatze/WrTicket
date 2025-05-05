@@ -216,7 +216,7 @@ localStorage.setItem("eventData", JSON.stringify(unholyDebugData))
 document.getElementById("search").addEventListener("input", function () {
 	let query = this.value.toLowerCase();
 	Array.from(document.getElementById("eventList").children).forEach(function (child) {
-		if (child.children[0].innerText.toLowerCase().includes(query)) {
+		if (child.children[0].innerText.toLowerCase().includes(query) || child.children[1].innerText.toLowerCase().includes(query) || child.children[2].innerText.toLowerCase().includes(query)) {
 			child.style.display = "grid";
 		} else {
 			child.style.display = "none";
