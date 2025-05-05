@@ -85,11 +85,18 @@ body {
 }
 
 #logo {
-    height: 100px;
+    height: 7vh;
     padding-left: 20px;
     margin: 5px;
     transition: 0.1s ease;
+    top: 2.5vh;
+    left: 0.4vw;
+    position: absolute;
+    
+}
 
+#logo::before {
+    
 }
 
 #logo:hover {
@@ -101,7 +108,7 @@ body {
     position: absolute;
     font-size: 18px;
     top: 48px;
-    left: 110px;
+    left: 128px;
     padding: 5px;
 }
 
@@ -284,4 +291,27 @@ body {
 	width: 88vw;
 }
 
+.backCon {
+    background-color: var(--color1);
+    border: 2px solid var(--color1);
+    border-radius: 10px;
+    margin: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 4vh;
+    width: 6vw;
+}
+
+.backIcon {
+    position: relative;
+    width: 40px;
+    top: -0.2vh;
+}   
+
+.backText {
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: -4.2vh;
+    left: 2.5vw;
+}
 

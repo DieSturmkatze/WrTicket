@@ -22,7 +22,6 @@
             p.classList.remove('menuEntryActive');
         });" src="logo.svg" alt="Logo" id="logo" >
         <div id="title">your fair ticketing service</div>
-            <div id="panel hidden">Home</div>
     </div>
     <div id="container">
         <div id="menuBar">
@@ -74,7 +73,10 @@
             <div class="panel1 hidden" id="Login">[Login]</div>
             <div class="panel1 hidden" id="About">[About]</div>
             <div class="panel1 hidden" id="EventInfo">
-				<button onclick="switchPanel('Events')">Back</button>
+				<div class="backCon" onclick="switchPanel('Events')">
+                    <img class="backIcon" src="backArrow.png">
+                    <div class="backText">Back</div>
+                </div>
 				<div id="eventInfoContainer">
 
 				</div>
