@@ -269,6 +269,9 @@ body {
 }
 
 #eventMap {
-	height: 800px;
-	width: 800px;
+    border: 5px solid var(--color2);
+    border-radius: 14px;
+    margin: 10px;
+	height: 84.3vh;
+	width: 88vw;
 }
