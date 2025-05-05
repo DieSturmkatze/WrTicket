@@ -37,7 +37,9 @@ function openEventPage(eventthis) {
 
 function eventPage(event) {
 	switchPanel("EventInfo")
-	
+	document.querySelectorAll(".menuEntry").forEach(function (p) {
+		p.classList.remove("menuEntryActive");
+	});
 	eventInfoContainer.innerHTML = `<div class="eventPageEntry">
 		<div class="hidden" id="JSON">${JSON.stringify(event)}</div>
 		<div class="eventPageTitle">${event.title}</div>

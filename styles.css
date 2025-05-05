@@ -89,6 +89,7 @@ body {
     padding-left: 20px;
     margin: 5px;
     transition: 0.1s ease;
+
 }
 
 #logo:hover {
@@ -141,7 +142,7 @@ body {
     padding: 5px;
     font-size: 16px;
     outline: none;
-    background-color: var(--color1);
+    background-color: var(--orangeAccent);
     color: white;
 }
 
@@ -217,6 +218,13 @@ body {
     padding: 8px;
 }
 
+.eventEntry:hover {
+    background-color: var(--orangeAccent);
+    border: 5px solid var(--orangeAccent);
+    transform: scale(0.995);
+    transition: 0.1s ease;
+}
+
 .eventTitle {
     font-size: 30px;
     font-weight: bold;
@@ -275,3 +283,5 @@ body {
 	height: 84.3vh;
 	width: 88vw;
 }
+
+

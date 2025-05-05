@@ -18,7 +18,9 @@
 </head>
 <body>
     <div id="topBar">
-        <img onclick="switchPanel('Home')" src="logo.svg" alt="Logo" id="logo" >
+        <img onclick="switchPanel('Home'); document.querySelectorAll('.menuEntry').forEach(function (p) {
+            p.classList.remove('menuEntryActive');
+        });" src="logo.svg" alt="Logo" id="logo" >
         <div id="title">your fair ticketing service</div>
             <div id="panel hidden">Home</div>
     </div>
@@ -97,7 +99,7 @@
 		<div id="popupTitle">NanowaR</div>
 		<div id="popupLocation">Back Stage Werk</div>
 		<div id="popupDate">32.1.26</div>
-		<button onclick='switchPanel("Events")''>Find Events</button>
+		<div onclick='switchPanel("Events")'>Find Events</div>
 	</div>
 </template>
 </html>
