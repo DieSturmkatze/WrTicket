@@ -5,9 +5,12 @@ debug = true
 
 
 
-function switchPanel(panel) {
-	document.getElementById("panel").innerHTML = panel;
-
+function switchPanel(me, panel) {
+	//document.getElementById("panel").innerHTML = panel;
+	document.querySelectorAll(".menuEntry").forEach(function (e) {
+		e.classList.remove("menuEntryActive");
+	});
+	me.classList.add("menuEntryActive");
 	document.querySelectorAll(".panel1").forEach(function (p) {
 		p.classList.add("hidden");
 	});

@@ -20,14 +20,14 @@
     <div id="topBar">
         <img onclick="switchPanel('Home')" src="logo.svg" alt="Logo" id="logo" >
         <div id="title">your fair ticketing service</div>
-            <div id="panel">Home</div>
+            <div id="panel hidden">Home</div>
     </div>
     <div id="container">
         <div id="menuBar">
-            <div onclick="switchPanel('Events'); getEvents();" id="menuEntry">Events</div>
-            <div onclick="switchPanel('Map'); updateMap();" id="menuEntry">Event Map</div>
-            <div onclick="switchPanel('Login')" id="menuEntry">Login</div>
-            <div onclick="switchPanel('About')" id="menuEntry">About</div>
+            <div onclick="switchPanel(this, 'Events'); getEvents();" class="menuEntry">Events</div>
+            <div onclick="switchPanel(this, 'Map'); updateMap();" class="menuEntry">Event Map</div>
+            <div onclick="switchPanel(this, 'Login')" class="menuEntry">Login</div>
+            <div onclick="switchPanel(this, 'About')" class="menuEntry">About</div>
         </div>
 
         <div id="content">
