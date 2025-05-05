@@ -3,7 +3,11 @@ const eventEntryTemplate = document.querySelector("#eventEntryTemplate")
 const eventInfoContainer = document.getElementById("eventInfoContainer")
 debug = true
 
-
+function stringToHtml(str) {
+	const template = document.createElement('template');
+	template.innerHTML = str.trim();
+	return template.content.firstChild;
+}
 
 function switchPanel(panel) {
 	
@@ -21,10 +25,21 @@ function switchPanelFromMenu(obj, panel) {
 	switchPanel(panel);
 }
 
-function openEventPage(eventthis, from) {
-	console.info(eventthis.children[0].innerText)
+function openEventPage(eventthis) {
+	var event = JSON.parse(eventthis.children[0].innerText)
+	console.log(event)
 	switchPanel("EventInfo")
-	eventInfoContainer.innerHTML = eventthis.innerHTML
+	
+	eventInfoContainer.innerHTML = `<div class="eventPageEntry">
+		<div class="eventPageJson hidden">${eventthis.children[0].innerText}</div>
+		<div class="eventPageTitle">${event.title}</div>
+		<div class="eventPageDate">${event.date}</div>
+		<div class="eventPageLocation">${event.location.name}</div>
+		<div class="eventPageLocationHover hidden" >${event.location.address}</div>
+		<div class="eventPagePrice">${event.price}</div>
+		<img class="timePageIcon" src="timeIcon.png">
+		<img class="venuePageIcon" src="venueIcon.png">
+	</div>`
 }
 
 async function getEvents() {
@@ -84,15 +99,17 @@ async function getEventsData(query) {
 }
 
 function insertEvent(event) {
-	const toInsert = eventEntryTemplate.content.cloneNode(true);
-	eventEntry = toInsert.childNodes[1]
-	eventEntry.children[0].innerText = event.title
-	eventEntry.children[1].innerText = event.date
-	eventEntry.children[2].innerText = event.location.name
-	eventEntry.children[3].innerText = event.location.address
-	eventEntry.children[4].innerText = event.price
-
-	return toInsert
+	return stringToHtml(`<div class="eventEntry" onclick="openEventPage(this, 'eventView')">
+		<div class="eventJson hidden">${JSON.stringify(event)}</div>
+		<div class="eventTitle">${event.title}</div>
+		<div class="eventDate">${event.date}</div>
+		<div class="eventLocation">${event.location.name}</div>
+		<div class="eventLocationHover hidden" >${event.location.address}</div>
+		<div class="eventPrice">${event.price}</div>
+		<img class="timeIcon" src="timeIcon.png">
+		<img class="venueIcon" src="venueIcon.png">
+	</div>`
+	)
 }
 
 
@@ -216,7 +233,7 @@ localStorage.setItem("eventData", JSON.stringify(unholyDebugData))
 document.getElementById("search").addEventListener("input", function () {
 	let query = this.value.toLowerCase();
 	Array.from(document.getElementById("eventList").children).forEach(function (child) {
-		if (child.children[0].innerText.toLowerCase().includes(query) || child.children[1].innerText.toLowerCase().includes(query) || child.children[2].innerText.toLowerCase().includes(query)) {
+		if (child.innerText.toLowerCase().includes(query) ){
 			child.style.display = "grid";
 		} else {
 			child.style.display = "none";
