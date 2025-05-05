@@ -9,6 +9,10 @@ function stringToHtml(str) {
 	return template.content.firstChild;
 }
 
+function objFromNode(node) {
+	return JSON.parse(node.querySelector("#JSON").innerText)
+}
+
 function switchPanel(panel) {
 	
 	document.querySelectorAll(".panel1").forEach(function (p) {
@@ -26,12 +30,16 @@ function switchPanelFromMenu(obj, panel) {
 }
 
 function openEventPage(eventthis) {
-	var event = JSON.parse(eventthis.children[0].innerText)
+	var event = objFromNode(eventthis)
 	console.log(event)
+	eventPage(event)
+}
+
+function eventPage(event) {
 	switchPanel("EventInfo")
 	
 	eventInfoContainer.innerHTML = `<div class="eventPageEntry">
-		<div class="eventPageJson hidden">${eventthis.children[0].innerText}</div>
+		<div class="hidden" id="JSON">${JSON.stringify(event)}</div>
 		<div class="eventPageTitle">${event.title}</div>
 		<div class="eventPageDate">${event.date}</div>
 		<div class="eventPageLocation">${event.location.name}</div>
@@ -100,7 +108,7 @@ async function getEventsData(query) {
 
 function insertEvent(event) {
 	return stringToHtml(`<div class="eventEntry" onclick="openEventPage(this, 'eventView')">
-		<div class="eventJson hidden">${JSON.stringify(event)}</div>
+		<div class="eventJson hidden" id="JSON">${JSON.stringify(event)}</div>
 		<div class="eventTitle">${event.title}</div>
 		<div class="eventDate">${event.date}</div>
 		<div class="eventLocation">${event.location.name}</div>

@@ -49,9 +49,16 @@ async function addMapMarkers() {
 		toInsert.getElementById("popupTitle").value = event.title
 		toInsert.getElementById("popupLocation").value = event.location.name
 		console.log(toInsert.getElementById("mapPopup"))
+		json = JSON.stringify(event)
 		L.marker([event.location.lat, event.location.long])
 			.addTo(eventMap)
-			.bindPopup(toInsert.getElementById("mapPopup").innerHTML); //scuffed but works
+			.bindPopup(`<div class="mapPopup">
+		<div class="hidden" id="JSON">${json}</div>
+		<div class="popupTitle">${event.title}</div>
+		<div class="popupLocation">${event.location.name} (${event.location.address})</div>
+		<div class="popupDate">${event.date}</div>
+		<button class="popupVisit" onclick='eventPage(${json})'>More</button>
+	</div>`); //scuffed but works
 	}
 }
 
