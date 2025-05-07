@@ -301,6 +301,11 @@ body {
     width: 6vw;
 }
 
+.backCon:hover {
+    background-color: var(--orangeAccent);
+    border: 2px solid var(--orangeAccent);
+}
+
 .backIcon {
     position: relative;
     width: 40px;
@@ -314,4 +319,88 @@ body {
     top: -4.2vh;
     left: 2.5vw;
 }
+
+.eventPageEntry{
+    width: 100%;
+    display: flex; align-items: flex-start;
+}
+
+.eventPageInfos {
+    flex: 1; margin-right: 20px;
+    position: relative;
+    background-color: var(--color2);
+    border: 2px solid var(--color2);
+    border-radius: 14px;
+    padding: 10px;
+    color: var(--background);
+    width: 20vw;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 32vw;
+    left: 55vw;
+}
+
+.eventPageTitle{
+    font-size: 60px;
+    font-weight: bold;
+    margin: 5px;
+    padding-bottom: 20px;;
+}
+
+.eventPageDateCon{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timePageIcon{
+    height: 5vh;
+    position: relative; 
+    
+}
+
+.eventPageDate{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.eventPagePlaceCon{
+    display: flex;
+    align-items: center;
+ 
+}
+
+.venuePageIcon{
+    height: 5vh;
+    position: relative; 
+
+}
+
+.eventPageLocation{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.eventPagePrice{
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 5px;
+    border: 2px solid var(--color1);
+    border-radius: 12px;
+    background-color: var(--color1);
+    color: var(--background);
+    padding: 5px;
+    padding-left: 14px;
+    width: 3.5vw;
+    left: 19vw;
+    top: -0.5vh;
+}
+
 
