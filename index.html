@@ -32,7 +32,10 @@
         </div>
 
         <div id="content">
-            <div class="panel1" id="Home">[startpage]</div>
+            <div class="panel1 homiehome" id="Home">
+                <img src="logo.svg" alt="Logo" id="homeLogo">
+                <h1>your fair ticketing service</h1>
+            </div>
             <div class="panel1 hidden" id="Events">
                 <div id="searchArea">
                     <input type="text" id="search" autocomplete="off" placeholder="Search for events...">
@@ -70,8 +73,17 @@
 				
 				<div id="eventMap"></div>
 			</div>
-            <div class="panel1 hidden" id="Login">[Login]</div>
-            <div class="panel1 hidden" id="About">[About]</div>
+            <div class="panel1 hidden" id="Login">
+                <section id="loginForm">
+                    <h1>Login</h1>
+                    <label for="username">username</label>
+                    <input type="text" id="username" name="username" required placeholder="required">
+                    <label for="password">password</label>
+                    <input type="password" id="password" name="password" required placeholder="required">
+                    <button>Login</button>
+                </section>
+            </div>
+            <div class="panel1 hidden" id="About">[About][design credit Felix Nowak]</div>
             <div class="panel1 hidden" id="EventInfo">
 				<div class="backCon" onclick="switchPanel('Events')">
                     <img class="backIcon" src="backArrow.png">
